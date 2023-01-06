@@ -1,7 +1,5 @@
-const dotenv = require("dotenv").config()
-
 // refer to the API KEY from config.js and generate API URL
-const API_CLIENTID = process.env.UNSPLASH_API_KEY;
+const API_CLIENTID = config.UNSPLASH_API_KEY;
 const API_URL = `https://api.unsplash.com/search/photos?page=1&per_page=20&client_id=${API_CLIENTID}`
 
 // declare a function to fetch and display images from the Unsplash API
