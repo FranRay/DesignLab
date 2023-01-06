@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+  <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+  <title>DESIGN LAB</title>
+
+  <!-- script for icons and css links -->
+  <script src="https://kit.fontawesome.com/e2614de000.js" crossorigin="anonymous"></script>
+  <link rel = "stylesheet" href = "../css/style.css">
+  <link rel = "stylesheet" href = "../css/image.css">
+</head>
+
+<body>
+<!-- Sticky Navbar -->
+<div class="top">
+  <div class="navbar">
+    <!-- Navbar logo -->
+    <a href="../index.html" class="navitem logo">DESIGN LAB</a>
+
+    <!-- Right-sided navbar links -->
+    <div class="right hide-small hide-medium">
+      <a href="image.html" class="navitem button"><i class="fa-solid fa-image"></i> IMAGES</a>
+      <a href="imageai.html" class="navitem button"><i class="fa-solid fa-microchip"></i> AI IMAGE</a>
+      <a href="lipsum.html" class="navitem button"><i class="fa-solid fa-pen-nib"></i> LIPSUM</a>
+      <a href="colours.html" class="navitem button"><i class="fa-solid fa-palette"></i> COLOURS</a>
+    </div>
+
+    <!-- Hide right-floated links on small screens and replace them with a hamburger menu icon -->
+    <a href="javascript:void(0)" class="hide-large" onclick="open()">
+      <i class="right navitem hamburger fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Search -->
+<container class = "image-search">
+  <!-- Search field -->
+  <div id="search-box">
+    <input id="input" type="text" placeholder="Generate an image based on your search..."><i id="search" class="fas fa-search"></i>
+  </div>
+  
+  <!-- Results Grid -->
+  <section>
+    <div class="container">
+      <div id="grid"></div>
+    </div>
+  </section>
+</container>
+
+<!-- Footer -->
+<footer>
+  <p class = "footer-text">All Rights Reserved. © 2022 by Fran Raymundo</p>
+</footer>
+
+<script src="../js/imageai.js"></script>
+</body>
+</html>

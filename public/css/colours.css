@@ -1,0 +1,159 @@
+/* colour palette generator ----------------------------------------------*/
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+    min-height: 60rem;
+    background-color: #fff;
+}
+
+/* clicked colour style ----------------------------------------------*/
+.clicked-colour {
+    background-color: #0C1226;
+    color: #fff;
+    padding: 12px 35px;
+    border-radius: 50px;
+    margin: 0 0 60px 0;
+    transition: 0.7s ease-in;
+    opacity: 0;
+}
+
+.clicked-colour.active {
+    opacity: 1;
+}
+
+.clicked-colour h5 {
+    font-size: 0.8rem;
+    font-weight: 200;
+    letter-spacing: 0.2px;
+}
+
+/* showcase ----------------------------------------------*/
+.colour-palette-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.colour-value {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    background-color: #fff ;
+    height: 250px;
+    width: 150px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in;
+    cursor: pointer;
+}
+
+.colour-value.success {
+    background-color: #fff;
+    box-shadow: 0 2px 10px 3px rgba(0, 0, 0, 0.3);
+    transform: rotateY(360deg) translateY(-10px);
+    transition: transform 0.5s linear;
+    transition: transform 0.2s ease-in;
+}
+
+.colour-value.colour-value.success .colour-value-text {
+    color: #161C2F;
+}
+
+.colour {
+    height: 100%;
+    width: 100%;
+}
+
+.colour-value-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0 5px 0 ;
+    color: #898D97;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.colour-value-text.clicked {
+    color: #161C2F;
+}
+
+.generate-colour {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* generate button ----------------------------------------------*/
+.btn {
+    border: none;
+    border-radius: 5px;
+    margin: 50px 0 20px 0;
+    padding: 15px 20px;
+    width: 100%;
+    color: #fff;
+    background-color: #E32D1A;
+    font-weight: 500;
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.02);
+    transition: 0.2s ease;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn-secondary-text {
+    font-size: 0.8rem;
+    color: #151B30;
+    padding: 5px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.instructions {
+    background-color: #fff;
+    color:#5A5F6C ;
+    font-size: 0.7rem;
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+}
+
+/* media queries ----------------------------------------------*/
+@media (min-width: 1000px) {
+    .container {
+        min-height: 60rem;
+    }
+}
+
+@media (min-width: 896px) {
+    .container {
+        min-height: 50rem;
+    }
+
+    .clicked-colour {
+        margin-bottom: 20px;
+    }
+    .btn-secondary-text {
+        margin-bottom: 20px;
+    }
+}
+@media (min-width: 481px) and (max-width: 895px) {
+  
+}
+@media (min-width: 0px) and (max-width: 480px) {
+  
+}

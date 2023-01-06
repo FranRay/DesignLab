@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+  <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+  <title>DESIGN LAB</title>
+
+  <!-- script for icons and css links -->
+  <script src="https://kit.fontawesome.com/e2614de000.js" crossorigin="anonymous"></script>
+  <link rel = "stylesheet" href = "../css/style.css">
+  <link rel = "stylesheet" href = "../css/lipsum.css">
+</head>
+
+<body>
+<!-- Sticky Navbar -->
+<div class="top">
+  <div class="navbar">
+    <!-- Navbar logo -->
+    <a href="../index.html" class="navitem logo">DESIGN LAB</a>
+
+    <!-- Right-sided navbar links -->
+    <div class="right hide-small hide-medium">
+      <a href="image.html" class="navitem button"><i class="fa-solid fa-image"></i> IMAGES</a>
+      <a href="imageai.html" class="navitem button"><i class="fa-solid fa-microchip"></i> AI IMAGE</a>
+      <a href="lipsum.html" class="navitem button"><i class="fa-solid fa-pen-nib"></i> LIPSUM</a>
+      <a href="colours.html" class="navitem button"><i class="fa-solid fa-palette"></i> COLOURS</a>
+    </div>
+
+    <!-- Hide right-floated links on small screens and replace them with a hamburger menu icon -->
+    <a href="javascript:void(0)" class="hide-large" onclick="open()">
+      <i class="right navitem hamburger fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Lipsum Generator -->
+<div class = "container">
+  <div class = "generator">
+  <div class = "generator-head">
+
+    <!-- Form -->
+    <form id = "generator-form">
+
+        <!-- Count Input -->
+        <div class = "gen-value">
+            <input name = "gen_count" type = "number" class = "form-control" min = "1" max = "100" value = "5">
+        </div>
+
+        <!-- Options Input -->
+        <div>
+            <select name = "gen_options" class = "form-control">
+                <option value = "paras">paragraphs</option>
+                <option value = "sentences">sentences</option>
+                <option value = "words">words</option>
+            </select>
+        </div>
+
+        <!-- Generate Button -->
+        <button type = "button" id = "gen-btn" class = "btn">generate!</button>
+    </form>
+
+    <!-- Copy Button -->
+    <button type = "button" id = "copy-btn" class = "btn">
+        <span>copy</span>
+        <i class = "fa-solid fa-copy"></i>
+    </button>
+  </div>
+
+  <!-- Generated Results -->
+  <div class = "generator-body">
+      <div id = "gen-content"></div>
+  </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p class = "footer-text">All Rights Reserved. © 2022 by Fran Raymundo</p>
+</footer>
+
+<script src = "../js/lipsum.js"></script>
+</body>
+</html>

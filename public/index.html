@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+  <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+  <title>DESIGN LAB</title>
+
+  <!-- script for icons and css links -->
+  <script src="https://kit.fontawesome.com/e2614de000.js" crossorigin="anonymous"></script>
+  <link rel = "stylesheet" href = "css/style.css">
+</head>
+
+<body>
+<!-- Sticky Navbar -->
+<div class="top">
+  <div class="navbar">
+    <a href="index.html" class="navitem logo">DESIGN LAB</a>
+
+    <!-- Right-sided navbar links -->
+    <div class="right hide-small hide-medium">
+      <a href="html/image.html" class="navitem button"><i class="fa-solid fa-image"></i> IMAGES</a>
+      <a href="html/imageai.html" class="navitem button"><i class="fa-solid fa-microchip"></i> AI IMAGE</a>
+      <a href="html/lipsum.html" class="navitem button"><i class="fa-solid fa-pen-nib"></i> LIPSUM</a>
+      <a href="html/colours.html" class="navitem button"><i class="fa-solid fa-palette"></i> COLOURS</a>
+    </div>
+
+    <!-- Hide right-floated links on small screens and replace them with a hamburger menu icon -->
+    <a href="javascript:void(0)" class="hide-large" onclick="open()">
+      <i class="right navitem hamburger fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+  
+<!-- Intro -->
+<container id = "#intro" class = "intro">
+  <div class = "intro-text">
+    <p class = "intro-phrase">A design toolbox for every designer</p>
+    <p class = "intro-para">Generate and search for icons, images, text, colors, and more.</p>
+    <p><a href="#tools" class="fill-button">EXPLORE TOOLS</a></p>
+  </div>
+  <div class = "intro-img-container">
+    <img class = "intro-img" src = "images/intro-img.png"></img>
+  </div>
+</container> 
+  
+<!-- Tools Cards -->
+<container id = "tools" class = "card-container">
+  <!-- Image Search Card -->
+  <div onclick="location.href='html/image.html'" class="cards">
+    <div class="card-item">
+      <div class="card-image"><img class="c-img" src = "images/Images.png"></img></div>
+      <div class="card-info">
+        <h2 class="card-title">Image Search</h2>
+        <p class="card-intro">Search for and download free photos from Unsplash.</p>
+      </div>
+    </div>
+  </div>
+  <!-- AI Image Card -->
+  <div onclick="location.href='html/imageai.html'" class="cards">
+    <div class="card-item">
+      <div class="card-image"><img class="c-img" src = "images/AIimage.png"></img></div>
+      <div class="card-info">
+        <h2 class="card-title">AI Image Generator</h2>
+        <p class="card-intro">Generate images for your designs with prompts.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Lipsum Card -->
+  <div onclick="location.href='html/lipsum.html'" class="cards">
+    <div class="card-item">
+      <div class="card-image"><img class="c-img" src = "images/Lipsum.png"></img></div>
+      <div class="card-info">
+        <h2 class="card-title">Lorem Ipsum Generator</h2>
+        <p class="card-intro">Generate dummy text for your designs.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Colours Card -->
+  <div onclick="location.href='html/colors.html'" class="cards">
+    <div class="card-item">
+      <div class="card-image"><img class="c-img" src = "images/Colours.png"></img></div>
+      <div class="card-info">
+        <h2 class="card-title">Colour Palette Generator</h2>
+        <p class="card-intro">Generate color palettes.</p>
+      </div>
+    </div>
+  </div>
+</container>
+
+<!-- Footer -->
+<footer>
+    <p class = "footer-text">All Rights Reserved. © 2022 by Fran Raymundo</p>
+</footer>
+
+</body>
+</html>

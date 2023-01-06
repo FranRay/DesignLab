@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+  <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+  <title>DESIGN LAB</title>
+
+  <!-- script for icons and css links -->
+  <script src="https://kit.fontawesome.com/e2614de000.js" crossorigin="anonymous"></script>
+  <link rel = "stylesheet" href = "../css/style.css">
+  <link rel = "stylesheet" href = "../css/colours.css">
+</head>
+
+<body>
+<!-- Sticky Navbar -->
+<div class="top">
+  <div class="navbar">
+    <!-- Navbar logo -->
+    <a href="../index.html" class="navitem logo">DESIGN LAB</a>
+
+    <!-- Right-sided navbar links -->
+    <div class="right hide-small hide-medium">
+      <a href="image.html" class="navitem button"><i class="fa-solid fa-image"></i> IMAGES</a>
+      <a href="imageai.html" class="navitem button"><i class="fa-solid fa-microchip"></i> AI IMAGE</a>
+      <a href="lipsum.html" class="navitem button"><i class="fa-solid fa-pen-nib"></i> LIPSUM</a>
+      <a href="colours.html" class="navitem button"><i class="fa-solid fa-palette"></i> COLOURS</a>
+    </div>
+
+    <!-- Hide right-floated links on small screens and replace them with a hamburger menu icon -->
+    <a href="javascript:void(0)" class="hide-large" onclick="open()">
+      <i class="right navitem hamburger fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Colour Palette Generator -->
+<section id="colour_palette" class="container">
+  <!-- Copied to your clipboard notice -->
+  <div class="clicked-colour">
+    <h5>
+      Colour <strong class="hex-colour"></strong> copied to your clipboard
+    </h5>
+  </div>
+
+  <!-- Colour Palette Showcase -->
+  <div class="colour-palette-showcase">
+    <div class="colour-value">
+      <div class="colour"></div>
+      <p class="colour-value-text"></p>
+    </div>
+    <div class="colour-value">
+      <div class="colour"></div>
+      <p class="colour-value-text"></p>
+    </div>
+    <div class="colour-value">
+      <div class="colour"></div>
+      <p class="colour-value-text"></p>
+    </div>
+    <div class="colour-value">
+      <div class="colour"></div>
+      <p class="colour-value-text"></p>
+    </div>
+    <div class="colour-value">
+      <div class="colour"></div>
+      <p class="colour-value-text"></p>
+    </div>
+  </div>
+
+  <!-- Gen Button -->
+  <div class="generate-colour">
+    <button class="btn" id="copy-button">Generate palette</button>
+    <p class="btn-secondary-text">
+      Or just press the Spacebar to generate new palettes.
+    </p>
+  </div>
+
+  <!-- Instructions -->
+  <div class="instructions">
+    <p>
+      Click to copy individual colour • Press 'C' to copy palette
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p class = "footer-text">All Rights Reserved. © 2022 by Fran Raymundo</p>
+</footer>
+
+<!-- Copy to Clipboard Script -->
+<script 
+  src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"
+  integrity="sha512-hDWGyh+Iy4Mr9AHOzUP2+Y0iVPn/BwxxaoSleEjH/i1o4EVTF/sh0/A1Syii8PWOae+uPr+T/KHwynoebSuAhw=="
+  crossorigin="anonymous">
+</script>
+
+  <script src="../js/colours.js"></script> 
+</body>
+</html>

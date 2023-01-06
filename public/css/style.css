@@ -1,0 +1,257 @@
+/* import fonts ----------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Figtree:wght@400;700&display=swap");
+/* mixins ----------------------------------------------*/
+/* color styles ----------------------------------------------*/
+/* general formatting ----------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Figtree", sans-serif;
+}
+
+body {
+  font-family: "Figtree", sans-serif;
+  font-size: 1vw;
+  color: #333;
+  background-color: #FFF;
+}
+
+/* common formatting ----------------------------------------------*/
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #FFF;
+}
+
+.right {
+  float: right;
+}
+
+.fill-button {
+  display: flex;
+  font-family: "Dela Gothic One", cursive;
+  font-size: clamp(0.6rem, 1vw, 1rem);
+  letter-spacing: 4px;
+  margin-top: 0.5em;
+  color: #FFF;
+  background-color: #E32D1A;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  float: left;
+  width: auto;
+  border-radius: 0.8rem;
+}
+
+/* navigation ----------------------------------------------*/
+.top {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+}
+
+.navbar {
+  width: 100%;
+  padding: 8px 16px;
+  background-color: #FFF;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.navbar .navitem {
+  display: inline-block;
+  padding: 8px 16px;
+  color: #333;
+  cursor: pointer;
+}
+.navbar .logo {
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
+  letter-spacing: 4px;
+  font-family: "Dela Gothic One", cursive;
+}
+.navbar .button {
+  font-size: clamp(0.8rem, 3vw, 1rem);
+  margin-top: 4px;
+}
+.navbar .hamburger {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+.navbar .navitem:hover {
+  color: #000 !important;
+  background-color: #ccc !important;
+}
+
+/* header ----------------------------------------------*/
+.intro {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  margin-top: 12em;
+}
+.intro .intro-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  justify-content: center;
+}
+.intro .intro-text .intro-phrase {
+  font-family: "Dela Gothic One", cursive;
+  font-size: clamp(1.9rem, 4vw, 2rem);
+  color: #333;
+}
+.intro .intro-text .intro-para {
+  margin-block: 1em;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+.intro .intro-img-container {
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+.intro .intro-img-container .intro-img {
+  width: 100%;
+}
+
+/* tool cards container ----------------------------------------------*/
+.background {
+  background-color: #000;
+}
+
+.card-container {
+  width: 90%;
+  display: flex;
+  -webkit-display: box;
+  -moz-display: box;
+  -ms-display: flexbox;
+  -webkit-display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: auto;
+  margin-block: 6rem;
+}
+
+/* tool cards ----------------------------------------------*/
+.cards {
+  display: flex;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  margin: auto;
+  width: 100%;
+}
+@media (min-width: 40rem) {
+  .cards {
+    flex: 0 0 45%;
+  }
+}
+.cards .card-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
+}
+.cards .card-item:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+}
+.cards .card-item:hover .card-image {
+  opacity: 1;
+}
+.cards .card-info {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+  line-height: 1.5em;
+  text-align: center;
+}
+.cards .card-title {
+  font-weight: 600;
+  font-size: clamp(1.2rem, 2vw, 0.5rem);
+  line-height: 1.1em;
+  text-align: center;
+  color: #333;
+  margin-bottom: 0.2em;
+}
+.cards .card-image {
+  height: auto;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 6px 6px 0px 0px;
+  opacity: 0.91;
+}
+.cards .card-image .c-img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+/* footer ----------------------------------------------*/
+footer {
+  display: flex;
+  flex-direction: column;
+  padding-block: 3em;
+  background-color: #333;
+  color: #FFF;
+  justify-content: center;
+  align-items: center;
+}
+footer .footer-text {
+  font-size: clamp(0.6rem, 2vw, 1rem);
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* media queries ----------------------------------------------*/
+@media (min-width: 896px) {
+  .hide-large {
+    display: none;
+  }
+}
+@media (min-width: 481px) and (max-width: 895px) {
+  .hide-medium {
+    display: none;
+  }
+  .intro .intro-text {
+    width: 100%;
+    margin-top: 5em;
+  }
+  .intro .intro-img-container {
+    width: 90%;
+    align-self: center;
+  }
+}
+@media (min-width: 0px) and (max-width: 480px) {
+  .hide-small {
+    display: none;
+  }
+  .intro {
+    flex-direction: column;
+    width: 90%;
+  }
+  .intro .intro-text {
+    order: 2;
+    margin-top: 10em;
+    margin-inline: 0;
+    align-items: center;
+    text-align: center;
+  }
+  .intro .intro-text .intro-para {
+    width: 90%;
+  }
+  .intro .intro-img {
+    order: 1;
+    margin-top: 10em;
+  }
+}/*# sourceMappingURL=style.css.map */
