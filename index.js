@@ -18,8 +18,9 @@ app.use(express.urlencoded({ extended: false }));
 
 // set the 'public' folder as the static directory for the app
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'etc')))
 
-// use the genImage routte when tthe /openai endpoint is hit
+// use the genImage route when the /openai endpoint is hit
 app.use('/openai', genImage);
 
 // start the server and log a message to the console when it is live
