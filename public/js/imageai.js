@@ -30,6 +30,9 @@ async function generateImageRequest(prompt) {
 
     // make a POST request to the /openai/genImage endpoint
     try {
+        // show loading animation
+        showLoadAnim();
+
         const response = await fetch('/openai/genImage', {
             method: 'POST',
             headers: {
@@ -45,7 +48,8 @@ async function generateImageRequest(prompt) {
 
         // if the response is not okay, display an alert and throw an error
         if (!response.ok) {
-            // for each response, increase alertCount by 1
+            // for each response, hide the loading animation and increase alertCount by 1
+            hideLoadAnim();
             alertCount = alertCount + 1;
             alert('ERROR ' + alertCount + '/3 : Your images could not be generated. The image you tried to generate may have been inappropriate, or there has been an error. Please try a different prompt.');
             throw new Error('ERROR: Your images could not be generated. The image you tried to generate may have been inappropriate, or there has been an error. Please try a different prompt.');
@@ -63,6 +67,9 @@ async function generateImageRequest(prompt) {
         image.className = "img";
         // set the src of the img element to the image URLpo
         image.src = imageUrl;
+
+        // hide loading animation
+        hideLoadAnim();
         
         // add a double-click event listener to the img element that opens the image in a new tab
         image.addEventListener("dblclick", function(){
@@ -77,6 +84,14 @@ async function generateImageRequest(prompt) {
     catch (error) {
         console.log(error);
     }
+}
+
+function showLoadAnim(){
+    document.querySelector("#loading").classList.add('animshow')
+}
+
+function hideLoadAnim(){
+    document.querySelector("#loading").classList.remove('animshow')
 }
   
 // event listeners that run the makeRequest function

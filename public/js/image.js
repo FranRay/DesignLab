@@ -1,30 +1,43 @@
-// refer to the API KEY from config.js and generate API URL
-const API_CLIENTID = config.UNSPLASH_API_KEY;
-const API_URL = `https://api.unsplash.com/search/photos?page=1&per_page=20&client_id=${API_CLIENTID}`
+// define function to get form submmissions
+getQuery = (e) => {
+  // prevent default submission behaviour
+  e.preventDefault();
 
-// declare a function to fetch and display images from the Unsplash API
-imgRequest = () => {
-  // clear the grid element
-  document.querySelector("#grid").textContent = "";
+  // get the query from the input element
+  const query = document.querySelector("#input").value;
 
-  // build the API url with the user's search input
-  let url = `${API_URL}&query=${input.value}`
-  // fetch the data from the API
-  fetch(url)
+  // call the imgRequest function
+  imgRequest(query);
+}
 
-  // if the response is not okay, throw an error 
-  .then(response => {
-    if (!response.ok) throw Error(response.statusText);
-      return response.json();
-  })
+// define an async function to make a POST request to the /api/searchTerms endpoint
+imgRequest = async (query) => {
+    // clear the text content of the #grid element
+    document.querySelector("#grid").textContent = "";
 
-  // display the images in the grid
-  .then(data => {
-    loadImages(data);
-  })
+    // make a POST request to the /api/searchTerms endpoint
+    try {
+      const response = await fetch ('/api/searchTerms', {
+          method: 'POST',
+          headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+          },
 
-  // log any errors
-  .catch(error => console.log(error));   
+          // send the prompt in the request body
+          body: JSON.stringify({query})
+      }) 
+
+      // if the response is successful, get the JSON data from the response
+      const data = await response.json();
+      // call the loadImages function to display the results
+      loadImages(data)
+    }
+
+    // if there is an error, log it to the console
+    catch (error) {
+        console.log('ERROR:', error);
+    }
 }
 
 // declare function for loading and displaying images 
@@ -49,8 +62,8 @@ loadImages = (data) => {
 }
 
 // event listeners that run the imgRequest function when enter or search button are pressed
-document.querySelector("#search").addEventListener('click', imgRequest);
+document.querySelector("#search").addEventListener('click', getQuery);
 document.querySelector("#input").addEventListener("keydown", (event) => {
   if (event.key == "Enter")
-    imgRequest();
+    getQuery(event);
 });
